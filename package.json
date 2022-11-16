@@ -1,8 +1,8 @@
 {
   "name": "spotify-api-multicall-handler",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "adds functionality to spotify-web-api-node to load longer playlists with a single call.",
-  "main": "index.ts",
+  "main": "index.js",
   
   "scripts": {    
     "build" : "tsc"

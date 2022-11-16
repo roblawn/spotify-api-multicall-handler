@@ -21,7 +21,7 @@ type SpotifyOptions = {
   
 
 //responsible for handling Spotify Data Structure and filling native Objects with their correct Data
-export class SpotifyAPIAdaptor{
+export class SpotifyMulticallHandler{
 
     //must be in multiples of 100 (currently)
     public static MAX_TRACKS = 299 
@@ -110,7 +110,7 @@ export class SpotifyAPIAdaptor{
         
             const tList = await callManager.makeSingleCall(this.spotifyApi.getPlaylistTracks, playlistId, options)
             
-            trackLength = Math.min(SpotifyAPIAdaptor.MAX_TRACKS, tList.body.total)
+            trackLength = Math.min(SpotifyMulticallHandler.MAX_TRACKS, tList.body.total)
 
             if (Array.isArray(tList.body.items) && Array.isArray(response)){
                                 

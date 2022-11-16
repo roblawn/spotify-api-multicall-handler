@@ -12,7 +12,7 @@ export class SpotifyCallManager{
     }
 
     //pass the function to call, and then as many arguments as should be called
-    async makeSingleCall(call : Function, ...params : any) : Promise <any> {
+    public async makeSingleCall(call : Function, ...params : any) : Promise <any> {
         //let args = [].slice.call(arguments)
         //args = args.filter(element => element !== undefined)
         const f : Function = call
@@ -30,7 +30,7 @@ export class SpotifyCallManager{
                     //console.log('retryTime = ' + retryTime)
                    
                 } catch (error){
-                    retryTime = 4000
+                    retryTime = 1000
                 }
                 hasError = true
             } else {
@@ -46,7 +46,7 @@ export class SpotifyCallManager{
         return response
     }
 
-    async makeMultipleCalls(call : Function, paramList : Array <any>){
+    public async makeMultipleCalls(call : Function, paramList : Array <any>){
         
         
         let response = []
@@ -67,7 +67,7 @@ export class SpotifyCallManager{
     }
 
     //pass the function to call, and then a list of arguments for each call as an array
-    async _internalMakeMultipleCalls(call : Function, paramList : Array <any>){
+    private async _internalMakeMultipleCalls(call : Function, paramList : Array <any>){
 
         let responses:Array < any > = []
         const promises:Array < any > = [] 

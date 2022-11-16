@@ -15,7 +15,7 @@ export class SpotifySnapshot{
         this.callManager = new SpotifyCallManager(this.spotifyApi)      
     }
 
-    async cachePlaylist(id:string):Promise<boolean>{
+    public async cachePlaylist(id:string):Promise<boolean>{
         if (this.snapshotId !== undefined || (this.id !== undefined && this.id !== id)){
             throw new Error("SpotifySnapshot is only meant for use on a single playlist. Create a new instance if you want to save a different playlist")
         }
@@ -30,7 +30,7 @@ export class SpotifySnapshot{
         return true
     }
 
-    async revertPlaylist():Promise<boolean>{
+    public async revertPlaylist():Promise<boolean>{
         if (this.snapshotId === undefined) return false
         const playlist = await this.callManager.makeSingleCall(this.spotifyApi.removeTracksFromPlaylist, 
                                                             this.id, [], {snapshot_id:this.snapshotId}).catch(error => {
