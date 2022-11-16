@@ -1,18 +1,19 @@
 {
-  "name": "spotifyloader",
+  "name": "spotify-api-multicall-handler",
   "version": "1.0.0",
-  "description": "Helper Classes to load Spotify Data ",
+  "description": "adds functionality to spotify-web-api-node to load longer playlists with a single call.",
   "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  
+  "scripts": {    
+    "build" : "tsc"
   },
-  "author": "",
+  "author": "Rob Lawn",
   "license": "ISC",
-  "dependencies": {
-    "@types/spotify-web-api-node": "^5.0.7",
+  "dependencies": {    
     "spotify-web-api-node": "^5.0.2"
   },
   "devDependencies": {
-    "@types/spotify-web-api-node": "^5.0.7"
+    "@types/spotify-web-api-node": "^5.0.7",
+    "typescript": "^4.9.3"
   }
 }
